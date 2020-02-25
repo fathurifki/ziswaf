@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux';
-import GetReducer from './app/redux/reducer';
+import GetReducer from './app/container/views/Homes/reducer';
 
-const reducers = combineReducers({
+const rootReducers = combineReducers({
     GetReducer
 })
 
-export type RootState = ReturnType<typeof reducers>
-export default reducers
+export type RootState = ReturnType<typeof rootReducers>;
+export default rootReducers;
