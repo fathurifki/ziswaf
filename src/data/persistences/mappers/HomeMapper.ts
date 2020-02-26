@@ -9,7 +9,7 @@ export class HomeMapper extends BaseResponseMapper {
       data.success,
       data.message,
       data.data.map(
-        (val) =>
+        (val: HomeData) =>
           new HomeData(val.id, val.name, val.age)
       )
     );

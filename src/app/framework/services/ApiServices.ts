@@ -4,6 +4,7 @@ import { injectable } from "tsyringe";
 import { Endpoints } from "../misc/EndPoints";
 import { getToken } from "../../../utils/cookies";
 require("dotenv").config();
+
 @injectable()
 export default class ApiService {
   public client: AxiosInstance;
