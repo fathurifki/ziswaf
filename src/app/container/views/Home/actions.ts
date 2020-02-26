@@ -2,7 +2,7 @@ import { GetActionType, SET_HOME } from "./types";
 
 // Clean Architecture
 import { container } from "tsyringe";
-import { HomePresenter } from "../../presenters/HomePresenter";
+import { HomePresenter } from "./Presenter";
 import { Home } from '../../../../domain/entities/Home';
 
 export const getHomeData = (payload: Home): GetActionType => {

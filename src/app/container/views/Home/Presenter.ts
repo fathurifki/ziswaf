@@ -1,6 +1,6 @@
 import { injectable } from 'tsyringe';
-import { Home } from '../../../domain/entities/Home';
-import { HomeRepositoryInterface } from '../../../data/persistences/contracts/HomeRepositoryInterface';
+import { Home } from '../../../../domain/entities/Home';
+import { HomeRepositoryInterface } from '../../../../data/persistences/contracts/HomeRepositoryInterface';
 
 @injectable()
 export class HomePresenter {

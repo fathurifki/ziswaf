@@ -1,5 +1,3 @@
-import { BaseEntity } from './Base'
-
 export class Home {
     public id: number
     public name: string
