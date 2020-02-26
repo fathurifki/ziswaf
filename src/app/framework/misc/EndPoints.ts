@@ -1,6 +1,6 @@
+require("dotenv").config();
 export class Endpoints {
-         public static baseUrl =
-           "https://private-1cb31-belajarapi3.apiary-mock.com";
+         public static baseUrl = process.env.REACT_APP_API_KEY;
          public static Route = class {
            public static HOME = "/home";
            public static PRODUCT = "/product";

@@ -3,7 +3,7 @@ import qs from "qs";
 import { injectable } from "tsyringe";
 import { Endpoints } from "../misc/EndPoints";
 import { getToken } from "../../../utils/cookies";
-
+require("dotenv").config();
 @injectable()
 export default class ApiService {
   public client: AxiosInstance;
@@ -32,12 +32,13 @@ export default class ApiService {
 
       this.client.interceptors.response.use(response => {
         console.log("===========================================");
-        // console.log('===NODE_ENV', process.env.NODE_ENV)
-        // console.log('===RESPONSE STATUS', response.status)
-        // console.log('===RESPONSE HEADER', response.headers)
-        // console.log('===RAW RESPONSE DATA', response.request._response)
-        console.log("===RESPONSE DATA", response.data);
-        // console.log('===NODE_ENV', process.env.NODE_ENV)
+        console.log('===> NODE_ENV', process.env.NODE_ENV)
+        console.log("===> API ENV", process.env);
+        console.log('===> RESPONSE STATUS', response.status)
+        console.log('===> RESPONSE HEADER', response.headers)
+        console.log('===> RAW RESPONSE DATA', response.request._response)
+        console.log("===> RESPONSE DATA", response.data);
+        console.log('===> NODE_ENV', process.env.NODE_ENV)
         console.log("===========================================");
         return response;
       });
