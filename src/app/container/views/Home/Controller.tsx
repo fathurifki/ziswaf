@@ -1,4 +1,4 @@
-import React, { ReactChildren, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { container } from "tsyringe";
 import { HomePresenter } from "./Presenter";
 import { Home } from "../../../../domain/entities/Home";

@@ -2,7 +2,7 @@ import React, { useEffect, useContext } from "react";
 import { Wrapper, Page, Title } from "./styled";
 
 import { HomeController, HomeContext } from "./Controller";
-
+import { Home } from '../../../../domain/entities/Home'
 export interface HistoryParam {
   name: string;
 }
@@ -12,13 +12,17 @@ const ChildComponent = () => {
   return (
     <div>
       {!controller.loading
-        ? JSON.stringify(controller, null, 2)
+        ? (controller.data as Array<Home>).map((item, index) => {
+          return (
+            <h1 key={index}>{item.name}</h1>
+          )
+        })
         : "Loadingg................."}
     </div>
   );
 };
 
-const Home = () => {
+const Homes = () => {
   return (
     <HomeController>
       <Wrapper>
@@ -31,4 +35,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Homes;
