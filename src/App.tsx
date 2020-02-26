@@ -1,3 +1,4 @@
+import 'reflect-metadata'
 import React from "react";
 import { createStore, applyMiddleware, compose } from "redux";
 import { Provider } from "react-redux";

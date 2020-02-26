@@ -10,7 +10,7 @@ export default function Routes(): JSX.Element {
     return (
         <Router history={history}>
             <Switch>
-                <Route exact path='/' component={Home} />
+                <Route exact path='/' component={Homes} />
                 <Route path='/product' component={Product} />
                 <Route path='/test' component={Homes} />
             </Switch>

@@ -29,10 +29,7 @@ export const fetchUserData = () => (
     });
 };
 
-export const getHomesData = () => async (
-  dispatch: Function,
-  getState: Function
-) => {
+export const getHomesData = () => async () => {
   const presenter = await container.resolve(HomePresenter);
   presenter
     .loadData({})
