@@ -9,11 +9,6 @@ import * as HomesActions from "./actions";
 // import Selectors
 import * as HomesSelector from "./selectors";
 
-// Clean Architecture
-import { container } from "tsyringe";
-import   { HomePresenter }   from "../../presenters/HomePresenter";
-import { Home } from '../../../../domain/entities/Home';
-
 const Wrapper = styled.section`
   padding: 4em;
   background: papayawhip;
@@ -42,28 +37,18 @@ export interface HistoryParam {
 }
 
 const Homes = () => {
-
-  async function  onTest() {
-    const presenter = await container.resolve(HomePresenter)
-    presenter
-      .loadData({})
-      .then((res: Home) => {
-        console.log('RESPONSE ACTION ==>', res);
-      })
-      .catch((err) => {
-        console.log('RESPONSE ERRORR ==>', err);
-      })
-  }
   // Actions
   const dispatch = useDispatch();
   const onUserList = () => dispatch(HomesActions.fetchUserData());
+  const onHomeData = () => dispatch(HomesActions.getHomesData());
 
   // Selectors
   const userList = useSelector(HomesSelector.getListUser())
 
   //Effect
   useEffect(() => {
-    onTest()
+    onUserList()
+    onHomeData()
   }, []);
 
   function test(i: string) {
@@ -80,13 +65,13 @@ const Homes = () => {
         <NavText onClick={() => test("/contacts")}> * Contacts </NavText>
       </Navigation>
       <Title>This is home</Title>
-      <Page>
+      {/* <Page>
         <ul>
           {userList.map((_user: { title: string }, index: number) => (
             <li key={index}>{_user.title}</li>
           ))}
         </ul>
-      </Page>
+      </Page> */}
     </Wrapper>
   );
 };
