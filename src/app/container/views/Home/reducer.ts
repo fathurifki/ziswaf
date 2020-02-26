@@ -1,5 +1,4 @@
 import { SET_HOME, GetActionType } from './types'
-import { HomeData } from '../../../../domain/entities/Home'
 const initialState = {
     data: []
 }

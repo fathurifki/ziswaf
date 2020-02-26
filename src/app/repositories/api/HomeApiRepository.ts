@@ -13,6 +13,7 @@ export class HomeApiRepository implements HomeRepositoryInterface {
     this.service = service;
     this.mapper = mapper;
   }
+  
   public async loadData(params: Object): Promise<Home> {
     const Resp = await this.service.invoke("get", Endpoints.Route.HOME, params);
     return this.mapper.convertFromApi(Resp);
