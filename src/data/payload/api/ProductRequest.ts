@@ -1,24 +1,24 @@
 import {
-  CreateProductData,
-  UpdateProductData,
-  DeleteProductData
+  CreateProductRequestInterface,
+  UpdateProductRequestInterface,
+  DeleteProductRequestInterface
 } from "../contracts/ProductContract";
 
-export class CreateProductRequest implements CreateProductData {
+export class CreateProductRequest implements CreateProductRequestInterface {
   constructor() {}
   public toJson() {
     return JSON.stringify({});
   }
 }
 
-export class UpdateProductRequest implements UpdateProductData {
+export class UpdateProductRequest implements UpdateProductRequestInterface {
   constructor() {}
   public toJson() {
     return JSON.stringify({});
   }
 }
 
-export class DeleteProductRequest implements DeleteProductData {
+export class DeleteProductRequest implements DeleteProductRequestInterface {
   constructor() {}
   public toJson() {
     return JSON.stringify({});

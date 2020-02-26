@@ -19,12 +19,20 @@ const Home = () => {
   // Actions
   const dispatch = useDispatch();
   const onHomeData = () => dispatch(HomeActions.getHomesData());
+  const onLoad = () => {
+    
+  };
+
+  const onBlur = () => {
+    
+  };
 
   // Selectors
   const homeList = useSelector(HomeSelector.getHomeList())
 
   //Effect
   useEffect(() => {
+    onLoad();
     onHomeData()
   }, []);
 

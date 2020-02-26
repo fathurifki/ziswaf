@@ -3,6 +3,7 @@ import ApiService from "../services/ApiServices";
 
 import { HomeMapper } from "../../../data/persistences/mappers/HomeMapper";
 import { HomeApiRepository } from "../../repositories/api/HomeApiRepository";
+import { Endpoint } from '../misc/EndPoint';
 
 export class RepositoryModule {
   public static init(container: DependencyContainer) {
@@ -10,7 +11,8 @@ export class RepositoryModule {
       useFactory: d => {
         return new HomeApiRepository(
           d.resolve(ApiService),
-          d.resolve(HomeMapper)
+          d.resolve(HomeMapper),
+          d.resolve(Endpoint)
         );
       }
     });

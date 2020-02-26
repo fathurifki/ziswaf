@@ -1,9 +1,8 @@
 import Axios, { AxiosInstance, Method, AxiosResponse } from "axios";
 import qs from "qs";
 import { injectable } from "tsyringe";
-import { Endpoints } from "../misc/EndPoints";
+import { Endpoint } from "../misc/EndPoint";
 import { getToken } from "../../../utils/cookies";
-require("dotenv").config();
 
 @injectable()
 export default class ApiService {
@@ -11,7 +10,7 @@ export default class ApiService {
 
   constructor() {
     this.client = Axios.create({
-      baseURL: Endpoints.baseUrl,
+      baseURL: Endpoint.baseUrl,
       timeout: 50000
     });
 
@@ -41,21 +40,22 @@ export default class ApiService {
     payload: any = null,
     headers: Map<string, string> = new Map()
   ): Promise<AxiosResponse<any>> {
-    // content-type application/json
+    
+    // set header
     this.client.defaults.headers["Content-Type"] = "application/json";
-    // set custom header if any
+    this.client.defaults.headers["Authorization"] = "Bearer " + getToken();
     headers.forEach((value: string, key: string) => {
       this.client.defaults.headers.common[key] = value;
     });
 
-    // set auth bearer
-    this.client.defaults.headers.Authorization = "Bearer " + getToken();
-    return await this.client.request({
+    var result =  await this.client.request({
       url,
       params,
       paramsSerializer: par => qs.stringify(par, { encode: false }),
       data: payload ? payload.toJSON() : null,
       method
     });
+
+    return result;
   }
 }

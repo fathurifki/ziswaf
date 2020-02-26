@@ -16,6 +16,7 @@
     "@types/redux-persist": "^4.3.1",
     "@types/styled-components": "^4.4.2",
     "axios": "^0.19.2",
+    "eventbusjs": "^0.2.0",
     "js-cookie": "^2.2.1",
     "office-ui-fabric-react": "^7.88.1",
     "qs": "^6.9.1",

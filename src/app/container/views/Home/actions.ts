@@ -1,10 +1,11 @@
-import { HomeState, GetActionType, SET_HOME } from "./types";
+import { GetActionType, SET_HOME } from "./types";
 
 // Clean Architecture
 import { container } from "tsyringe";
 import { HomePresenter } from "../../presenters/HomePresenter";
+import { Home } from '../../../../domain/entities/Home';
 
-export const getHomeData = (payload: HomeState): GetActionType => {
+export const getHomeData = (payload: Home): GetActionType => {
   return {
     type: SET_HOME,
     payload
@@ -12,14 +13,7 @@ export const getHomeData = (payload: HomeState): GetActionType => {
 };
 
 export const getHomesData = () => async (dispatch: Function) => {
-  const presenter = await container.resolve(HomePresenter);
-  presenter
-    .loadData({})
-    .then((res: any) => {
-      dispatch(getHomeData(res.data));
-      console.log("RESPONSE ACTION ==>", res);
-    })
-    .catch(err => {
-      console.log("RESPONSE ERRORR ==>", err);
-    });
+  const presenter = container.resolve(HomePresenter);
+  var results =  await presenter.loadData(new Map<string, string>());
+  dispatch(getHomeData(results));
 };

@@ -1,20 +1,12 @@
-export class Home {
-    public success: boolean
-    public message: string
-    public data?: HomeData[]
+import { BaseEntity } from './Base'
 
-    constructor( success: boolean, message: string, data?: HomeData[]) {
-        this.success = success
-        this.message = message
-        this.data = data
-    }
-}
-export class HomeData {
+export class Home extends BaseEntity {
     public id: number
     public name: string
     public age: number
 
     constructor(id: number, name: string, age: number) {
+        super();
         this.id = id
         this.name = name
         this.age = age

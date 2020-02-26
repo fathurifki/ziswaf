@@ -1,9 +1,9 @@
-export interface CreateHomeData {
+export interface CreateHomeRequestInterface {
   toJson(): string;
 }
-export interface UpdateHomeData {
+export interface UpdateHomeRequestInterface {
   toJson(): string;
 }
-export interface DeleteHomeData {
+export interface DeleteHomeRequestInterface {
   toJson(): string;
 }

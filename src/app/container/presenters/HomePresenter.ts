@@ -1,16 +1,16 @@
 import { injectable } from 'tsyringe';
-import { HomeApiRepository } from '../../repositories/api/HomeApiRepository';
 import { Home } from '../../../domain/entities/Home';
+import { HomeRepositoryInterface } from '../../../data/persistences/contracts/HomeRepositoryInterface';
 
 @injectable()
 export class HomePresenter {
-  private repository: HomeApiRepository
+  private repository: HomeRepositoryInterface
 
-  constructor(repository: HomeApiRepository) {
+  constructor(repository: HomeRepositoryInterface) {
       this.repository = repository
   }
 
-  public loadData(params:Object): Promise<Home> {
+  public loadData(params: Map<string, string>): Promise<Home> {
       return this.repository.loadData(params)
   }
 }

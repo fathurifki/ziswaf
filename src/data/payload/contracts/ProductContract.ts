@@ -1,9 +1,9 @@
-export interface CreateProductData {
+export interface CreateProductRequestInterface {
   toJson(): string;
 }
-export interface UpdateProductData {
+export interface UpdateProductRequestInterface {
   toJson(): string;
 }
-export interface DeleteProductData {
+export interface DeleteProductRequestInterface {
   toJson(): string;
 }

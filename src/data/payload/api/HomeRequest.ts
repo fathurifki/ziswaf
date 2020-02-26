@@ -1,24 +1,24 @@
 import {
-  CreateHomeData,
-  UpdateHomeData,
-  DeleteHomeData
+  CreateHomeRequestInterface,
+  UpdateHomeRequestInterface,
+  DeleteHomeRequestInterface
 } from "../contracts/HomeContract";
 
-export class CreateHomeRequest implements CreateHomeData {
+export class CreateHomeRequest implements CreateHomeRequestInterface {
   constructor() {}
   public toJson() {
     return JSON.stringify({});
   }
 }
 
-export class UpdateHomeRequest implements UpdateHomeData {
+export class UpdateHomeRequest implements UpdateHomeRequestInterface {
   constructor() {}
   public toJson() {
     return JSON.stringify({});
   }
 }
 
-export class DeleteHomeRequest implements DeleteHomeData {
+export class DeleteHomeRequest implements DeleteHomeRequestInterface {
   constructor() {}
   public toJson() {
     return JSON.stringify({});

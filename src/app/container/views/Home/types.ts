@@ -1,14 +1,10 @@
-import { HomeData } from '../../../../domain/entities/Home'
-
-export interface HomeState {
-  data: HomeData[];
-}
+import { Home } from '../../../../domain/entities/Home'
 
 export const SET_HOME = "SET_HOME";
 
 interface GetHomeDataAction {
     type: typeof SET_HOME
-    payload: HomeState
+    payload: Home
 }
 
 export type GetActionType = GetHomeDataAction
