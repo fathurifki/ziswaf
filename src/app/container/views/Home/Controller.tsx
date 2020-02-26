@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { container } from "tsyringe";
 import { HomePresenter } from "./Presenter";
-import { Home } from "../../../../domain/entities/Home";
+import { Home } from '../../../../domain/entities/Home';
 
 interface IinitialState {
-  data: Home[] | [];
+  data: Home[];
   loading: Boolean;
 }
 
@@ -23,7 +23,7 @@ export const {
 } = HomeContext;
 
 export const HomeController = ({ children }) => {
-  const [data, setData] = useState<Array<Home> | []>([]);
+  const [data, setData] = useState<Array<Home>>([]);
   const [loading, setLoading] = useState<Boolean>(false);
   const homePresenter: HomePresenter = container.resolve(HomePresenter);
 
