@@ -16,17 +16,6 @@ export default class ApiService {
 
     if (process.env.NODE_ENV !== "production") {
       this.client.interceptors.request.use(request => {
-        // console.log('===========================================')
-        // console.log('===NODE_ENV', process.env.NODE_ENV)
-        // console.log(
-        //   '===REQUEST URL',
-        //   (request.baseURL || 'undefined') + (request.url || 'undefined')
-        // )
-        // console.log('===REQUEST METHOD', request.method)
-        // console.log('===REQUEST HEADER', request.headers)
-        // console.log('===REQUEST DATA', request.data)
-        // console.log('===NODE_ENV', process.env.NODE_ENV)
-        // console.log('===========================================')
         return request;
       });
 
