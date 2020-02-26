@@ -10,7 +10,7 @@ export class HomePresenter {
       this.repository = repository
   }
 
-  public loadData(params: Map<string, string>): Promise<Home> {
+  public loadData(params: Map<string, string>): Promise<Array<Home>> {
       return this.repository.loadData(params)
   }
 }

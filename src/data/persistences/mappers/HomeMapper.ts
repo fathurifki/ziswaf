@@ -3,7 +3,7 @@ import { BaseResponseMapper } from "./Base";
 import { Home } from "../../../domain/entities/Home";
 
 export class HomeMapper extends BaseResponseMapper {
-  public convertFromApi(result: AxiosResponse<any>): Home {
+  public convertFromApi(result: AxiosResponse<any>): Array<Home> {
     const { data } = result;
     console.log('data mapper', data);
     

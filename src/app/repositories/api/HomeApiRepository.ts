@@ -16,7 +16,7 @@ export class HomeApiRepository implements HomeRepositoryInterface {
     this.endpoint = endpoint;
   }
   
-  public async loadData(params: Object): Promise<Home> {
+  public async loadData(params: Object): Promise<Array<Home>> {
     const resp = await this.service.invoke("get", this.endpoint.homeUrl(), params);
     return this.mapper.convertFromApi(resp);
   }
