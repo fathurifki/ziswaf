@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from "react";
+import React, { useContext } from "react";
 import { Wrapper, Page, Title } from "./styled";
 
 import { HomeController, HomeContext } from "./Controller";
@@ -22,7 +22,7 @@ const ChildComponent = () => {
   );
 };
 
-const Homes = () => {
+const HomeApp = () => {
   return (
     <HomeController>
       <Wrapper>
@@ -35,4 +35,4 @@ const Homes = () => {
   );
 };
 
-export default Homes;
+export default HomeApp;
