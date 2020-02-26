@@ -1,9 +1,12 @@
-import { BaseResponse } from "../../../domain/entities/Base";
+import { BaseEntity } from "../../../domain/entities/Base";
 import { AxiosResponse } from "axios";
 
 export class BaseResponseMapper {
-  public convertBaseResponseFromApi(result: AxiosResponse<any>): BaseResponse {
-    const { data } = result;
-    return new BaseResponse( data.success, data.message );
-  }
-}
+         public convertBaseResponseFromApi(
+           result: AxiosResponse<any>
+         ): BaseEntity {
+           const { data } = result;
+           console.log('data base', data);
+           return new BaseEntity(data.success, data.message);
+         }
+       }
