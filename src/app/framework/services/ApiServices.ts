@@ -31,15 +31,14 @@ export default class ApiService {
       });
 
       this.client.interceptors.response.use(response => {
-        console.log("===========================================");
+        console.log("<=====================================================>");
         console.log('===> NODE_ENV', process.env.NODE_ENV)
-        console.log("===> API ENV", process.env);
         console.log('===> RESPONSE STATUS', response.status)
         console.log('===> RESPONSE HEADER', response.headers)
         console.log('===> RAW RESPONSE DATA', response.request._response)
         console.log("===> RESPONSE DATA", response.data);
         console.log('===> NODE_ENV', process.env.NODE_ENV)
-        console.log("===========================================");
+        console.log("<====================================================>");
         return response;
       });
     }
