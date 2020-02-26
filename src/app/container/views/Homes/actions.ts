@@ -1,4 +1,11 @@
-import { SET_DATA, UserState, GetActionTypes } from "./types";
+import {
+  SET_DATA,
+  UserState,
+  GetActionTypes,
+  SET_HOME,
+  HomeState,
+  GetActionType
+} from "./types";
 import axiosApi from "../../../../utils/axios";
 
 // Clean Architecture
@@ -13,6 +20,13 @@ export const getUserData = (payload: UserState): GetActionTypes => {
   };
 };
 
+export const getHomeData = (payload: HomeState): GetActionType => {
+  return {
+    type: SET_HOME,
+    payload
+  };
+};
+
 export const fetchUserData = () => (
   dispatch: Function,
   getState: Function
@@ -21,19 +35,19 @@ export const fetchUserData = () => (
     .get(`/posts`)
     .then(res => {
       console.log("RESPONSEE====", res);
-      getState(res);
+      dispatch(getUserData(res.data));
     })
     .catch(error => {
-      console.log("RESPONSEERROR====", error);
       console.error(error);
     });
 };
 
-export const getHomesData = () => async () => {
+export const getHomesData = () => async (dispatch: Function) => {
   const presenter = await container.resolve(HomePresenter);
   presenter
     .loadData({})
-    .then((res: Home) => {
+    .then((res: any) => {
+      dispatch(getHomeData(res.data));
       console.log("RESPONSE ACTION ==>", res);
     })
     .catch(err => {

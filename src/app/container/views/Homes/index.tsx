@@ -44,10 +44,11 @@ const Homes = () => {
 
   // Selectors
   const userList = useSelector(HomesSelector.getListUser())
+  const homeList = useSelector(HomesSelector.getHomeList())
 
   //Effect
   useEffect(() => {
-    onUserList()
+    // onUserList()
     onHomeData()
   }, []);
 
@@ -65,13 +66,15 @@ const Homes = () => {
         <NavText onClick={() => test("/contacts")}> * Contacts </NavText>
       </Navigation>
       <Title>This is home</Title>
-      {/* <Page>
+      <Page>
         <ul>
-          {userList.map((_user: { title: string }, index: number) => (
-            <li key={index}>{_user.title}</li>
-          ))}
+          {
+            userList.length>0&&userList.map(function(item, i) {
+            return (<li key={i}>{item.name}</li>)
+            })
+          }
         </ul>
-      </Page> */}
+      </Page>
     </Wrapper>
   );
 };
