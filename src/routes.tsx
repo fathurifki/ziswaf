@@ -1,6 +1,6 @@
 import React from 'react';
 import { Router, Switch, Route } from 'react-router-dom';
-import history from './utils/BrowserHistory';
+import history from "@/app/infrastructures/misc/BrowserHistory";
 
 import Product from './app/container/views/Product/index';
 import Home from './app/container/views/Home/View';

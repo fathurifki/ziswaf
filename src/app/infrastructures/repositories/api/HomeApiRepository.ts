@@ -1,9 +1,8 @@
-import ApiService from "../../services/ApiServices";
-import { Endpoint } from "../../misc/EndPoint";
-
-import { Home } from "../../../../domain/entities/Home";
-import { HomeMapper } from "../../../../data/persistences/mappers/HomeMapper";
-import { HomeRepositoryInterface } from "../../../../data/persistences/contracts/HomeRepositoryInterface";
+import ApiService from "@/app/infrastructures/services/ApiServices";
+import { Endpoint } from "@/app/infrastructures/misc/EndPoint";
+import { Home } from "@/domain/entities/Home";
+import { HomeMapper } from "@/data/persistences/mappers/HomeMapper";
+import { HomeRepositoryInterface } from "@/data/persistences/contracts/HomeRepositoryInterface";
 
 export class HomeApiRepository implements HomeRepositoryInterface {
   private service: ApiService;
@@ -15,9 +14,13 @@ export class HomeApiRepository implements HomeRepositoryInterface {
     this.mapper = mapper;
     this.endpoint = endpoint;
   }
-  
-  public async loadData(params: Object): Promise<Array<Home>> {
-    const resp = await this.service.invoke("get", this.endpoint.homeUrl(), params);
+
+  public async loadData(params: Object): Promise<Home[]> {
+    const resp = await this.service.invoke(
+      "get",
+      this.endpoint.homeUrl(),
+      params
+    );
     return this.mapper.convertFromApi(resp);
   }
 }

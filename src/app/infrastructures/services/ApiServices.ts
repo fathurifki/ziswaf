@@ -2,7 +2,7 @@ import Axios, { AxiosInstance, Method, AxiosResponse } from "axios";
 import qs from "qs";
 import { injectable } from "tsyringe";
 import { Endpoint } from "../misc/EndPoint";
-import { getToken } from "../../../utils/cookies";
+import { getToken } from '@/utils/cookies';
 
 @injectable()
 export default class ApiService {
