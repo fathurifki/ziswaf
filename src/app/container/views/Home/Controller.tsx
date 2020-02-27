@@ -3,7 +3,7 @@ import { container } from "tsyringe";
 import { HomePresenter } from "./Presenter";
 import { Home } from '../../../../domain/entities/Home';
 
-interface IinitialState {
+interface InitialState {
   data: Home[];
   loading: Boolean;
 }
@@ -13,7 +13,7 @@ const initialState = {
   loading: false
 };
 
-export const HomeContext = React.createContext<IinitialState>(
+export const HomeContext = React.createContext<InitialState>(
   initialState
 );
 
