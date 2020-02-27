@@ -8,7 +8,12 @@ const Product = () => {
         <React.Fragment>
             <Container>
                 <H1>React Starter Kit</H1>
-                <Button>Primary</Button>
+                <Button type='primary'>Primary</Button>
+                <Button type='secondary'>Secondary</Button>
+                <Button type='danger'>Danger</Button>
+                <Button type='success'>Success</Button>
+                <Button type='info'>Info</Button>
+                <Button type='warning'>Warning</Button>
             </Container>
         </React.Fragment>
     )
