@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Wrapper, Page, Title } from "./styled";
+import { Wrapper, Page, Title } from "./style";
 
 import { HomeController, HomeContext } from "./Controller";
 export interface HistoryParam {

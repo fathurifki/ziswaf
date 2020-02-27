@@ -1,9 +1,9 @@
-import ApiService from "../../framework/services/ApiServices";
-import { Endpoint } from "../../framework/misc/EndPoint";
+import ApiService from "../../services/ApiServices";
+import { Endpoint } from "../../misc/EndPoint";
 
-import { Home } from "../../../domain/entities/Home";
-import { HomeMapper } from "../../../data/persistences/mappers/HomeMapper";
-import { HomeRepositoryInterface } from "../../../data/persistences/contracts/HomeRepositoryInterface";
+import { Home } from "../../../../domain/entities/Home";
+import { HomeMapper } from "../../../../data/persistences/mappers/HomeMapper";
+import { HomeRepositoryInterface } from "../../../../data/persistences/contracts/HomeRepositoryInterface";
 
 export class HomeApiRepository implements HomeRepositoryInterface {
   private service: ApiService;
