@@ -52,7 +52,7 @@ export default class ApiService {
       url,
       params,
       paramsSerializer: par => qs.stringify(par, { encode: false }),
-      data: payload ? payload.toJSON() : null,
+      data: payload ? JSON.stringify(payload) : null,
       method
     });
 

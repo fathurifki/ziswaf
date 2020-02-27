@@ -13,3 +13,24 @@ export const Title = styled.h1`
 export const Page = styled.div`
   display: flex;
 `;
+
+export const CustomTable = styled.table`
+  &&& {
+    table,
+    th,
+    td {
+      border: 1px solid black;
+    }
+    th,
+    td,
+    tr {
+      padding: 5px;
+    }
+    th {
+      text-align: left;
+    }
+    table {
+      width: 100%;
+    }
+  }
+`;

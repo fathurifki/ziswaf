@@ -1,8 +1,12 @@
 import ApiService from "@/app/infrastructures/services/ApiServices";
 import { Endpoint } from "@/app/infrastructures/misc/EndPoint";
-import { Home } from "@/domain/entities/Home";
+import { Book } from "@/domain/entities/Home";
 import { HomeMapper } from "@/data/persistences/mappers/HomeMapper";
 import { HomeRepositoryInterface } from "@/data/persistences/contracts/HomeRepositoryInterface";
+import {
+  CreateHomeRequest,
+  UpdateHomeRequest
+} from "@/data/payload/api/HomeRequest";
 
 export class HomeApiRepository implements HomeRepositoryInterface {
   private service: ApiService;
@@ -15,12 +19,44 @@ export class HomeApiRepository implements HomeRepositoryInterface {
     this.endpoint = endpoint;
   }
 
-  public async loadData(params: Object): Promise<Home[]> {
+  public async loadData(params: Object): Promise<Book[]> {
     const resp = await this.service.invoke(
       "get",
-      this.endpoint.homeUrl(),
+      this.endpoint.bookUrl(),
       params
     );
     return this.mapper.convertFromApi(resp);
+  }
+
+  public async postData(payload: CreateHomeRequest): Promise<any> {
+    const resp = await this.service.invoke(
+      "post",
+      this.endpoint.bookUrl(),
+      undefined,
+      payload
+    );
+    return this.mapper.convertBaseResponseFromApi(resp);
+  }
+
+  public async updateData(
+    payload: UpdateHomeRequest,
+    id: number
+  ): Promise<any> {
+    const resp = await this.service.invoke(
+      "patch",
+      `${this.endpoint.bookUrl()}/${id}`,
+      undefined,
+      payload
+    );
+    return this.mapper.convertBaseResponseFromApi(resp);
+  }
+
+  public async deleteData(id:number): Promise<any> {
+    const resp = await this.service.invoke(
+      "delete",
+      `${this.endpoint.bookUrl()}/${id}`,
+      undefined
+    );
+    return this.mapper.convertBaseResponseFromApi(resp)
   }
 }
