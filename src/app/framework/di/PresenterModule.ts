@@ -1,6 +1,6 @@
 import { DependencyContainer } from "tsyringe";
-import { HomeApiRepository } from "../../repositories/api/HomeApiRepository";
-import { HomePresenter } from "../../container/views/Home/Presenter";
+import { HomePresenter } from '@/app/container/views/Home/Presenter';
+import { HomeApiRepository } from '@/app/repositories/api/HomeApiRepository';
 
 export class PresenterModule {
   public static init(container: DependencyContainer) {

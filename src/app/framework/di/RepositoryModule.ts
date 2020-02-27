@@ -1,9 +1,9 @@
 import { DependencyContainer } from "tsyringe";
-import ApiService from "../services/ApiServices";
 
-import { HomeMapper } from "../../../data/persistences/mappers/HomeMapper";
-import { HomeApiRepository } from "../../repositories/api/HomeApiRepository";
-import { Endpoint } from '../misc/EndPoint';
+import { Endpoint } from "../misc/EndPoint";
+import { HomeMapper } from "@/data/persistences/mappers/HomeMapper";
+import ApiService from "../services/ApiServices";
+import { HomeApiRepository } from "@/app/repositories/api/HomeApiRepository";
 
 export class RepositoryModule {
   public static init(container: DependencyContainer) {

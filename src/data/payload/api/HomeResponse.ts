@@ -1,4 +1,4 @@
-import { Home } from '../../../domain/entities/Home'
+import { Home } from '@/domain/entities/Home'
 
 export class HomeResponse {
     public success: boolean

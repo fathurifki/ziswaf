@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { container } from "tsyringe";
-import { HomePresenter } from "./Presenter";
-import { Home } from '../../../../domain/entities/Home';
+import { Home } from '@/domain/entities/Home';
+import { HomePresenter } from './Presenter';
 
 interface IinitialState {
   data: Home[];
@@ -37,6 +37,8 @@ export const HomeController = ({ children }) => {
     setData(homeData);
     setLoading(false);
   };
+
+
 
   return <HomeProvider value={{ data, loading }}>{children}</HomeProvider>;
 };
