@@ -17,6 +17,7 @@
     "eventbusjs": "^0.2.0",
     "js-cookie": "^2.2.1",
     "office-ui-fabric-react": "^7.88.1",
+    "prop-types": "^15.7.2",
     "qs": "^6.9.1",
     "react": "^16.12.0",
     "react-app-rewired": "^2.1.5",
@@ -34,8 +35,9 @@
     "typescript": "~3.7.2"
   },
   "scripts": {
-    "start": "react-app-rewired start",
-    "build": "react-app-rewired build",
+    "start": "npm run tailwind:css && react-app-rewired start",
+    "tailwind:css": "tailwind build src/tailwind.css -c tailwind.config.js -o src/index.css",
+    "build": "npm run tailwind:css && react-app-rewired build",
     "test": "react-app-rewired test",
     "eject": "react-app-rewired eject"
   },
@@ -56,6 +58,7 @@
   },
   "devDependencies": {
     "@types/react": "^16.9.19",
-    "dotenv": "^8.2.0"
+    "dotenv": "^8.2.0",
+    "tailwindcss": "^1.2.0"
   }
 }

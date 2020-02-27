@@ -1,9 +1,16 @@
 import React from "react";
+import { Button } from '@/app/container/components/button/button';
+import { Container } from '@/app/container/components/container/container';
+import { H1 } from '@/app/container/components/H1/H1';
 
-export default function Product(): JSX.Element {
+const Product = () => {
     return (
         <React.Fragment>
-            <h1>Product List</h1>
+            <Container>
+                <H1>React Starter Kit</H1>
+                <Button>Primary</Button>
+            </Container>
         </React.Fragment>
     )
 }
+export default Product;

@@ -3,6 +3,8 @@ import { Wrapper, Page, Title, CustomTable } from "./style";
 
 import { HomeController, HomeContext } from "./Controller";
 import { CreateHomeRequest } from '@/data/payload/api/HomeRequest';
+import { Button } from '@/app/container/components/button/button'
+
 export interface HistoryParam {
   name: string;
 }
@@ -11,7 +13,7 @@ const FormComponent = () => {
   const controller = useContext(HomeContext)
   return (
     <React.Fragment>
-      <button onClick={() => controller._onPost(new CreateHomeRequest('Test', 'Anak', 'Rak 1', 10000, 1000))}>POST</button>
+      <Button color={'red'} onClick={() => controller._onPost(new CreateHomeRequest('Test', 'Anak', 'Rak 1', 10000, 1000))}>Post</Button>
     </React.Fragment>
   )
 };
