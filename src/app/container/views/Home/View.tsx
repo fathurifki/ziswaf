@@ -12,7 +12,6 @@ const FormComponent = () => {
   const controller = useContext(HomeContext)
   return (
     <div>
-      <List data={controller.data} />
     <Button color={'red'} onClick={() => controller._onPost(new CreateHomeRequest('Test', 'Anak', 'Rak 1', 10000, 1000))}>Post</Button>
   </div>
   )
@@ -61,6 +60,7 @@ const HomeApp = () => {
         <H1>Refactory Library</H1>
         <ChildComponent />
         <FormComponent />
+        <List />
       </Container>
     </HomeController>
   );

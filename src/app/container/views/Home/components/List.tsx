@@ -1,12 +1,12 @@
 import React from 'react'
 import { H1 } from '@/app/container/components'
 import ListChild from './ListChild'
-const List = (data) => {
+const List = () => {
     return (
         <div>
             <H1>I Am List</H1>
             <div>
-                <ListChild data={data} />
+                <ListChild />
             </div>
         </div>
     )
