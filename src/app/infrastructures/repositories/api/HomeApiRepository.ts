@@ -7,6 +7,7 @@ import {
   CreateHomeRequest,
   UpdateHomeRequest
 } from "@/data/payload/api/HomeRequest";
+import { CreateHomeRequestInterface, UpdateHomeRequestInterface } from '@/data/payload/contracts/HomeContract';
 
 export class HomeApiRepository implements HomeRepositoryInterface {
   private service: ApiService;
@@ -28,25 +29,25 @@ export class HomeApiRepository implements HomeRepositoryInterface {
     return this.mapper.convertFromApi(resp);
   }
 
-  public async postData(payload: CreateHomeRequest): Promise<any> {
+  public async postData(payload: CreateHomeRequestInterface): Promise<any> {
     const resp = await this.service.invoke(
       "post",
       this.endpoint.bookUrl(),
       undefined,
-      payload
+      payload as CreateHomeRequest
     );
     return this.mapper.convertBaseResponseFromApi(resp);
   }
 
   public async updateData(
-    payload: UpdateHomeRequest,
+    payload: UpdateHomeRequestInterface,
     id: number
   ): Promise<any> {
     const resp = await this.service.invoke(
       "patch",
       `${this.endpoint.bookUrl()}/${id}`,
       undefined,
-      payload
+      payload as UpdateHomeRequest
     );
     return this.mapper.convertBaseResponseFromApi(resp);
   }

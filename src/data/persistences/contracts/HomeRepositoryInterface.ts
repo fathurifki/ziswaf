@@ -1,9 +1,9 @@
 import { Book } from '@/domain/entities/Home';
-import { CreateHomeRequest, UpdateHomeRequest } from '@/data/payload/api/HomeRequest';
+import { CreateHomeRequestInterface, UpdateHomeRequestInterface } from '@/data/payload/contracts/HomeContract';
 
 export interface HomeRepositoryInterface {
   loadData(params: Map<string, string>): Promise<Book[]>;
-  postData(payload: CreateHomeRequest): Promise<Book[]>;
-  updateData(payload: UpdateHomeRequest, params: number): Promise<Book[]>;
+  postData(payload: CreateHomeRequestInterface ): Promise<Book[]>;
+  updateData(payload: UpdateHomeRequestInterface, params: number): Promise<Book[]>;
   deleteData(params: number): Promise<Book[]>;
 }

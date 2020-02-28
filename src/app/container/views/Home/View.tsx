@@ -1,9 +1,8 @@
 import React, { useContext } from "react";
-import { Wrapper, Page, Title, CustomTable } from "./style";
-
-import { HomeController, HomeContext } from "./Controller";
+import { Container, Button, H1 } from '../../components/index';
+import { HomeContext, HomeController } from "./Controller";
 import { CreateHomeRequest } from '@/data/payload/api/HomeRequest';
-import { Button } from '@/app/container/components/button/button'
+import List from './components/List';
 
 export interface HistoryParam {
   name: string;
@@ -12,16 +11,17 @@ export interface HistoryParam {
 const FormComponent = () => {
   const controller = useContext(HomeContext)
   return (
-    <React.Fragment>
-      <Button color={'red'} onClick={() => controller._onPost(new CreateHomeRequest('Test', 'Anak', 'Rak 1', 10000, 1000))}>Post</Button>
-    </React.Fragment>
+    <div>
+      <List data={controller.data} />
+    <Button color={'red'} onClick={() => controller._onPost(new CreateHomeRequest('Test', 'Anak', 'Rak 1', 10000, 1000))}>Post</Button>
+  </div>
   )
 };
 
 const ChildComponent = () => {
   const controller = useContext(HomeContext);
   return (
-    <CustomTable>
+    <table>
       <thead>
         <tr>
           <th>No</th>
@@ -50,20 +50,18 @@ const ChildComponent = () => {
           )
         })}
       </tbody>
-    </CustomTable>
+    </table>
   );
 };
 
 const HomeApp = () => {
   return (
     <HomeController>
-      <Wrapper>
-        <Title>Refactory Library</Title>
-        <Page>
-          <ChildComponent />
-        </Page>
+      <Container>
+        <H1>Refactory Library</H1>
+        <ChildComponent />
         <FormComponent />
-      </Wrapper>
+      </Container>
     </HomeController>
   );
 };
