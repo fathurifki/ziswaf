@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { container } from "tsyringe";
 import { Book } from "@/domain/entities/Home";
 import { HomePresenter } from "./Presenter";
-import { CreateHomeRequest, UpdateHomeRequest } from "@/data/payload/api/HomeRequest";
+import { CreateHomeRequest, UpdateHomeRequest } from "@/data/payload/api/HomeApiRequest";
 
 interface InitialState {
   data: Book[];

@@ -4,7 +4,7 @@ import { HomeRepositoryInterface } from "@/data/persistences/contracts/HomeRepos
 import {
   CreateHomeRequest,
   UpdateHomeRequest
-} from "@/data/payload/api/HomeRequest";
+} from "@/data/payload/api/HomeApiRequest";
 @injectable()
 export class HomePresenter {
   private repository: HomeRepositoryInterface;

@@ -6,7 +6,7 @@ import { HomeRepositoryInterface } from "@/data/persistences/contracts/HomeRepos
 import {
   CreateHomeRequest,
   UpdateHomeRequest
-} from "@/data/payload/api/HomeRequest";
+} from "@/data/payload/api/HomeApiRequest";
 import { CreateHomeRequestInterface, UpdateHomeRequestInterface } from '@/data/payload/contracts/HomeContract';
 
 export class HomeApiRepository implements HomeRepositoryInterface {

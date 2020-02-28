@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Container, Button, H1 } from '../../components/index';
 import { HomeContext, HomeController } from "./Controller";
-import { CreateHomeRequest } from '@/data/payload/api/HomeRequest';
+import { CreateHomeRequest } from '@/data/payload/api/HomeApiRequest';
 import List from './components/List';
 
 export interface HistoryParam {
